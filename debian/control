@@ -1,0 +1,31 @@
+Source: golang-goleveldb
+Section: devel
+Priority: extra
+Maintainer: Debian Go Packaging Team <pkg-go-maintainers@lists.alioth.debian.org>
+Uploaders: Martín Ferrari <tincho@debian.org>,
+           Michael Lustfield <michael@lustfield.net>
+Build-Depends: debhelper (>= 10.0.0),
+               dh-golang (>= 1.17~),
+               golang-any,
+               golang-ginkgo-dev,
+               golang-github-golang-snappy-dev (>= 0.0+git20150730),
+Standards-Version: 3.9.8
+Vcs-Git: https://anonscm.debian.org/git/pkg-go/packages/golang-goleveldb.git
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-go/packages/golang-goleveldb.git
+Homepage: https://github.com/syndtr/goleveldb
+XS-Go-Import-Path: github.com/syndtr/goleveldb
+
+Package: golang-github-syndtr-goleveldb-dev
+Breaks: golang-goleveldb-dev (<< 0.0~git20170302.0.3c5717c)
+Replaces: golang-goleveldb-dev (<< 0.0~git20170302.0.3c5717c)
+Architecture: all
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         golang-github-golang-snappy-dev (>= 0.0+git20150730),
+         golang-ginkgo-dev
+Description: LevelDB key/value database in Go
+ This library provides an implementation of the LevelDB key/value
+ database in the Go programming language.
+ .
+ LevelDB is a fast key-value storage library that provides an ordered
+ mapping from string keys to string values.
